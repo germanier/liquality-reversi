@@ -1,5 +1,6 @@
 import { Injectable } from '@angular/core';
 import { setup } from "@liquality/wallet-sdk";
+import { environment } from 'src/environments/environment.development';
 
 
 @Injectable({
@@ -8,10 +9,10 @@ import { setup } from "@liquality/wallet-sdk";
 export class LiqualityService {
   constructor() { }
 
-  setupSDK() {
+  public setupSDK() {
     setup({
-      alchemyApiKey: 'YOUR_API_KEY_HERE',
-      etherscanApiKey: 'YOUR_API_KEY_HERE',
+      alchemyApiKey: environment.ALCHEMY_API_KEY,
+      etherscanApiKey: environment.ETHERSCAN_API_KEY,
       infuraProjectId: '-',
       pocketNetworkApplicationID: '-',
       quorum: 1,
